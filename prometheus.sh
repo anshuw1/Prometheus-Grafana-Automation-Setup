@@ -1,10 +1,10 @@
-PROM_V_LATEST_VERSION=v2.53.1 
-PROM_LATEST_VERSION=2.53.1 
-
 #!/bin/bash
 
+PROM_V_LATEST_VERSION=v2.53.1 
+LATEST_VERSION=2.53.1 
+
 # Construct the download URL
-DOWNLOAD_URL="https://github.com/prometheus/prometheus/releases/download/${LATEST_VERSION}/prometheus-${LATEST_VERSION}.linux-amd64.tar.gz"
+DOWNLOAD_URL="https://github.com/prometheus/prometheus/releases/download/${PROM_V_LATEST_VERSION}/prometheus-${LATEST_VERSION}.linux-amd64.tar.gz"
 
 # Download the latest version of Prometheus
 wget $DOWNLOAD_URL
