@@ -1,10 +1,10 @@
 # Install necessary dependencies
 sudo apt-get install -y adduser libfontconfig1
 
-GRAF_LATEST_VERSION= 
+LATEST_VERSION= 
 
 # Construct the download URL for the latest version
-DOWNLOAD_URL="https://dl.grafana.com/enterprise/release/grafana-enterprise_${LATEST_VERSION#v}_amd64.deb"
+DOWNLOAD_URL="https://dl.grafana.com/enterprise/release/grafana-enterprise_${LATEST_VERSION}_amd64.deb"
 
 # Download the latest version of Grafana Enterprise
 wget $DOWNLOAD_URL -O grafana-enterprise_latest_amd64.deb
