@@ -22,3 +22,10 @@ jobs:
           sed -i " 3 c PROM_V_LATEST_VERSION=${PROM_V_LATEST_VERSION} " promethus.sh 
           sed -i " 4 c PROM_LATEST_VERSION=${PROM_LATEST_VERSION} " promethus.sh 
 
+      - name: Commit updated promethus versions
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add promethus.sh
+          git commit -m "Update Promethus.sh file"
+          git push
