@@ -30,7 +30,7 @@ jobs:
            GRAF_LATEST_VERSION=$(echo "${GRAF_V_LATEST_VERSION}" | cut -c 2-)
            echo ${GRAF_LATEST_VERSION}
 
-           sed -i " 3 c GRAF_LATEST_VERSION=${GRAF_V_LATEST_VERSION} " grafana.sh      
+           sed -i " 3 c GRAF_LATEST_VERSION=${GRAF_LATEST_VERSION} " grafana.sh      
            
       - name: Commit updated promethus versions
         run: |
