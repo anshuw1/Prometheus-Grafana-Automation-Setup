@@ -64,4 +64,3 @@ jobs:
           git add nodeexporter.sh   
           git commit -m "Update nodeexporter.sh file" 
           git push
-      
