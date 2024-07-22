@@ -5,7 +5,7 @@ on:
     - cron: '0 0 * * 0' # Runs at midnight on every 10th day of the month
 
 jobs:
-  fetch_tomcat_versions:
+  fetch_promgraf_versions:
     runs-on: ubuntu-latest
 
     steps:
