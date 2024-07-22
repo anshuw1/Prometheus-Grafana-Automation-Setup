@@ -1,1 +1,18 @@
+name: Fetch Grafana Versions
 
+on:
+  schedule:
+    - cron: '* * * * *' # Runs at midnight on every 10th day of the month
+
+jobs:
+  fetch_tomcat_versions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Fetch Latest Grafana Version
+        run: |
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/prometheus/prometheus/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')
+          echo ${LATEST_VERSION}
