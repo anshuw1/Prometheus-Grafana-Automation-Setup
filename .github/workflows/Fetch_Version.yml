@@ -55,4 +55,12 @@ jobs:
            echo ${NODE_LATEST_VERSION}
 
            sed -i " 4 c LATEST_VERSION=${NODE_LATEST-VERSION} " nodeexporter.sh
+
+      - name: Commit updated nodeexporter versions
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add nodeexporter.sh   
+          git commit -m "Update nodeexporter.sh file" 
+          git push
       
