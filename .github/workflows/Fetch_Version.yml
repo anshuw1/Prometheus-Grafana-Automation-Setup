@@ -1,4 +1,4 @@
-name: Fetch Grafana Versions
+name: Fetch Promethus Grafana Versions
 
 on:
   schedule:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Fetch Latest Grafana Version
+      - name: Fetch Latest Promethus Version
         run: |
           PROM_V_LATEST_VERSION=$(curl -s https://api.github.com/repos/prometheus/prometheus/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')
           echo ${PROM_V_LATEST_VERSION}
