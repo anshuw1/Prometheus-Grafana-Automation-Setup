@@ -1,7 +1,7 @@
 
 
 
-
+LATEST_VERSION=VERSION 
 
 
 .
