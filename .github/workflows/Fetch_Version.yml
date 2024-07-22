@@ -22,13 +22,13 @@ jobs:
           sed -i " 3 c PROM_V_LATEST_VERSION=${PROM_V_LATEST_VERSION} " prometheus.sh 
           sed -i " 4 c LATEST_VERSION=${PROM_LATEST_VERSION} " prometheus.sh 
 
-      - name: Commit updated prometheus versions
-        run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
-          git add prometheus.sh   
-          git commit -m "Update Prometheus.sh file" 
-          git push
+     # - name: Commit updated prometheus versions
+     #   run: |
+     #     git config --local user.name "GitHub Actions"
+     #     git config --local user.email "actions@github.com"
+     #     git add prometheus.sh   
+     #    git commit -m "Update Prometheus.sh file" 
+      #    git push
 
       - name: Fetch Latest Grafana Version
         run: |
@@ -39,12 +39,20 @@ jobs:
 
            sed -i " 5 c LATEST_VERSION=${GRAF_LATEST_VERSION} " grafana.sh
 
-      - name: Commit updated grafana versions
+    #  - name: Commit updated grafana versions
+    #    run: |
+     #     git config --local user.name "GitHub Actions"
+      #    git config --local user.email "actions@github.com"
+      #    git add grafana.sh   
+       #   git commit -m "Update Grafana.sh file" 
+       #   git push
+
+      - name: Fetch Latest Grafana Version
         run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
-          git add grafana.sh   
-          git commit -m "Update Grafana.sh file" 
-          git push
-           
+           NODE_V_LATEST_VERSION=$(curl -s https://api.github.com/repos/prometheus/node_exporter/releases/latest | jq -r '.tag_name')
+           echo ${NODE_V_LATEST_VERSION} 
+           NODE_LATEST_VERSION=$(echo "${NODE_V_LATEST_VERSION}" | cut -c 2-)
+           echo ${NODE_LATEST_VERSION}
+
+           sed -i " 4 c LATEST_VERSION=${NODE_LATEST-VERSION} " nodeexporter.sh
       
