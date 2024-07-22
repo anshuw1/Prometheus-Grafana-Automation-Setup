@@ -20,7 +20,7 @@ jobs:
           echo ${PROM_LATEST_VERSION}
 
           sed -i " 3 c PROM_V_LATEST_VERSION=${PROM_V_LATEST_VERSION} " prometheus.sh 
-          sed -i " 4 c PROM_LATEST_VERSION=${PROM_LATEST_VERSION} " prometheus.sh 
+          sed -i " 4 c LATEST_VERSION=${PROM_LATEST_VERSION} " prometheus.sh 
 
       - name: Commit updated prometheus versions
         run: |
