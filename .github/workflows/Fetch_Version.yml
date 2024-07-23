@@ -2,7 +2,7 @@ name: Fetch Prometheus Grafana Versions
 
 on:
   schedule:
-    - cron:  '0 0 * * 0' # Runs at 00:00, on day 1 of the month, only in January, April, July, and October.
+    - cron:  '* * * * *' # Runs at 00:00, on day 1 of the month, only in January, April, July, and October.
 
 jobs:
   fetch_promgraf_versions:
@@ -61,6 +61,11 @@ jobs:
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
-          git add nodeexporter.sh   
-          git commit -m "Update nodeexporter.sh file" 
-          git push
+          git add nodeexporter.sh
+          if ! git diff --cached --quiet; then
+            echo "nodeexporter version differs, updating nodeexporter.sh..."
+            git commit -m "Update Node_Exporter.sh file"
+            git push
+          else
+            echo "No changes detected, skipping commit."
+          fi
