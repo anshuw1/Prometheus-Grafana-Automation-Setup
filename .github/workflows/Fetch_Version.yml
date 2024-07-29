@@ -67,14 +67,14 @@ jobs:
            sed -i " 5 c NODE_V_LATEST_VERSION=${NODE_V_LATEST_VERSION} " nodeexporter.sh
            sed -i " 6 c LATEST_VERSION=${NODE_LATEST_VERSION} " nodeexporter.sh
 
-      - name: Commit updated nodeexporter versions
+      - name: Commit updated node exporter versions
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
           git add nodeexporter.sh
           if ! git diff --cached --quiet; then
-            echo "nodeexporter version differs, updating nodeexporter.sh..."
-            git commit -m "Update nodeExporter.sh file"
+            echo "Node Exporter version differs, updating node_exporter.sh..."
+            git commit -m "Update node_exporter.sh file"
             git push
           else
             echo "No changes detected, skipping commit."
