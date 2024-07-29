@@ -6,13 +6,13 @@ NODE_V_LATEST_VERSION=v1.8.2
 LATEST_VERSION=1.8.2 
 
 # Construct the download URL using the latest version
-download_url="https://github.com/prometheus/node_exporter/releases/download/v${latest_version}/node_exporter-${latest_version}.linux-amd64.tar.gz"
+download_url="https://github.com/prometheus/node_exporter/releases/download/v${LATEST_VERSION}/node_exporter-${LATEST_VERSION}.linux-amd64.tar.gz"
 
 # Download and extract Node Exporter
 wget $download_url -O node_exporter.tar.gz
 tar -xf node_exporter.tar.gz
-sudo mv node_exporter-${latest_version}.linux-amd64/node_exporter /usr/local/bin
-rm -rv node_exporter-${latest_version}.linux-amd64* node_exporter.tar.gz
+sudo mv node_exporter-${LATEST_VERSION}.linux-amd64/node_exporter /usr/local/bin
+rm -rv node_exporter-${LATEST_VERSION}.linux-amd64* node_exporter.tar.gz
 
 # Create a system user for Node Exporter
 sudo useradd -rs /bin/false node_exporter
