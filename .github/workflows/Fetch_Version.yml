@@ -64,8 +64,8 @@ jobs:
            NODE_LATEST_VERSION=$(echo "${NODE_V_LATEST_VERSION}" | cut -c 2-)
            echo ${NODE_LATEST_VERSION}
 
-           sed -i " 3 c NODE_V_LATEST_VERSION=${NODE_V_LATEST_VERSION} " nodeexporter.sh
-           sed -i " 4 c LATEST_VERSION=${NODE_LATEST_VERSION} " nodeexporter.sh
+           sed -i " 5 c NODE_V_LATEST_VERSION=${NODE_V_LATEST_VERSION} " nodeexporter.sh
+           sed -i " 6 c LATEST_VERSION=${NODE_LATEST_VERSION} " nodeexporter.sh
 
       - name: Commit updated nodeexporter versions
         run: |
