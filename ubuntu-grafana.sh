@@ -21,3 +21,14 @@ fi
 
 # Install Grafana Enterprise
 sudo dpkg -i grafana-enterprise_latest_amd64.deb
+
+# Check if the installation was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to install Grafana Enterprise. Attempting to fix dependencies."
+    sudo apt-get install -f -y
+    sudo dpkg -i grafana-enterprise_latest_amd64.deb
+    if [ $? -ne 0 ]; then
+        echo "Failed to install Grafana Enterprise after fixing dependencies."
+        exit 1
+    fi
+fi
