@@ -10,6 +10,15 @@ The idea of this project is to make easy an automated script for quickly install
 - **Weekly Updates**: Automatically fetches the latest versions to keep your system current.
 - **User-Friendly**: Simplifies the setup process, allowing you to focus on monitoring and visualization.
 
+## Supported Platforms
+
+Our scripts support the following environments on AWS:
+
+- **Amazon Linux**:
+  - `amazonlinux-tomcat.sh`: Installs Tomcat on an Amazon Linux instance.
+- **Ubuntu**:
+  - `ubuntu-tomcat.sh`: Installs Tomcat on an Ubuntu instance.
+
 ## Prerequisites
 
 - Linux-based server (preferably Amazon Linux)
@@ -20,8 +29,8 @@ The idea of this project is to make easy an automated script for quickly install
 
 1. **Clone the Repository**:
     ```sh
-    git clone https://github.com/anshuw1/Prometheus-Grafana-NodeExporter-Automation-Setup.git
-    cd Prometheus-Grafana-NodeExporter-Automation-Setup
+    git clone https://github.com/anshuw1/Prometheus-Grafana-Automation-Setup.git
+    cd Prometheus-Grafana-Automation-Setup
     ```
 
 2. **Run the Setup Script**:
@@ -43,4 +52,8 @@ The scheduled job automatically updates the versions. To manually update, rerun 
 ```
 
 ## Contributing
-We welcome contributions! Please fork the repository, create a pull request with your changes.
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+---
+
+Feel free to reach out if you have any questions or need further assistance.
