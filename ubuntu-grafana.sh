@@ -32,3 +32,9 @@ if [ $? -ne 0 ]; then
         exit 1
     fi
 fi
+
+# Reload systemd, enable, and start Grafana service
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable grafana-server
+sudo /bin/systemctl start grafana-server
+
