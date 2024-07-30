@@ -12,3 +12,12 @@ DOWNLOAD_URL="https://dl.grafana.com/enterprise/release/grafana-enterprise_${LAT
 
 # Download the latest version of Grafana Enterprise
 wget $DOWNLOAD_URL -O grafana-enterprise_latest_amd64.deb
+
+# Check if the download was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to download Grafana Enterprise. Please check the URL or network connection."
+    exit 1
+fi
+
+# Install Grafana Enterprise
+sudo dpkg -i grafana-enterprise_latest_amd64.deb
