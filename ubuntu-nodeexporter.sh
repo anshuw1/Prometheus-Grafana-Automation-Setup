@@ -32,3 +32,32 @@ if ! id "node_exporter" &>/dev/null; then
     sudo useradd -rs /bin/false node_exporter
 fi
 
+# Create the systemd service file for Node Exporter
+sudo tee /etc/systemd/system/node_exporter.service > /dev/null <<EOF
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Reload systemd, enable and start Node Exporter
+sudo systemctl daemon-reload
+sudo systemctl enable node_exporter
+sudo systemctl start node_exporter.service
+
+# Check the status of the Node Exporter service
+sudo systemctl status node_exporter.service --no-pager
+
+if [ $? -eq 0 ]; then
+    echo "Node Exporter is running successfully."
+else
+    echo "There was an issue starting the Node Exporter service."
+fi
