@@ -38,3 +38,14 @@ sudo /bin/systemctl daemon-reload
 sudo /bin/systemctl enable grafana-server
 sudo /bin/systemctl start grafana-server
 
+# Check Grafana service status
+sudo /bin/systemctl status grafana-server --no-pager
+
+if [ $? -eq 0 ]; then
+    echo "Grafana Enterprise is running successfully."
+else
+    echo "There was an issue starting the Grafana Enterprise service."
+fi
+
+# Clean up downloaded .deb file
+rm grafana-enterprise_latest_amd64.deb
