@@ -23,4 +23,3 @@ sudo /bin/systemctl status grafana-server --no-pager
 
 # Clean up downloaded .deb file
 rm grafana-enterprise_latest_amd64.deb
-.
