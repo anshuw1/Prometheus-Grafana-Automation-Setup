@@ -10,15 +10,6 @@ The idea of this project is to make easy an automated script for quickly install
 - **Weekly Updates**: Automatically fetches the latest versions to keep your system current.
 - **User-Friendly**: Simplifies the setup process, allowing you to focus on monitoring and visualization.
 
-## Supported Platforms
-
-Our scripts support the following environments on AWS:
-
-- **Amazon Linux**:
-  - `amazonlinux-tomcat.sh`: Installs Tomcat on an Amazon Linux instance.
-- **Ubuntu**:
-  - `ubuntu-tomcat.sh`: Installs Tomcat on an Ubuntu instance.
-
 ## Prerequisites
 
 - Linux-based server (preferably Amazon Linux)
