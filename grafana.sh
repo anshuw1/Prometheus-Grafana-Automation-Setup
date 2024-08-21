@@ -2,7 +2,7 @@
 sudo apt-get install -y adduser libfontconfig1
 
 # Fetch Latest version
-LATEST_VERSION=11.1.3 
+LATEST_VERSION=11.1.4 
 
 # Construct the download URL for the latest version
 DOWNLOAD_URL="https://dl.grafana.com/enterprise/release/grafana-enterprise_${LATEST_VERSION}_amd64.deb"
